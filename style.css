@@ -1,4 +1,31 @@
 /* TODO(you): Write the CSS to finish the assignment! */
+
+/* ____________ Universal classes ____________ */
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+
+/* ____________ End for Universal classes ____________ */
+
+/* ____________ Responsive ____________ */
+
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0px 20px !important;
+    max-width: calc(700 * 95%);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .stack-circle {
+    display: none !important;
+  }
+}
+
 body {
   font-family: 'Proxima Nova', 'Helvetica', 'Arial', sans-serif;
   font-size: 18px;
@@ -6,6 +33,8 @@ body {
   margin: 0px auto;
   max-width: 700px;
 }
+
+/* ____________ End for Responsive ____________ */
 
 /* ____________ Style for header ____________ */
 header {
@@ -129,6 +158,10 @@ header div {
 /* ____________ End Style for Box start, Boxes and Buttons ____________ */
 
 /* ____________ Style for Attemp Quiz ____________ */
+#attempt-quiz {
+  margin-bottom: 30px;
+}
+
 span.question-text {
   font-size: 14px;
 }
@@ -140,19 +173,102 @@ ul.option-container {
 
 li.option {
   padding: 15px 0px;
-}
-
-li.option.un-selected {
   background-color: #f1f1f1;
+  margin-bottom: 1px;
+  cursor: pointer;
 }
 
 li.option.selected,
-li.option.un-selected:hover {
-  background-color: #ddd;
+li.option.un-selected:hover,
+li.option.completed:not(.correct-answer):not(.wrong-answer):hover {
+  background-color: #ddd !important;
 }
 
 li.option input[type="radio"] {
   margin: 0px 8px 0px 15px;
 }
 
+#attempt-quiz .boxes {
+  position: relative;
+  text-align: center;
+}
+
+#btn-submit {
+  margin: 20px 0px;
+  padding: 18px;
+}
+
 /* ____________ End Style for Attemp Quiz ____________ */
+
+/* ____________ Style for Review Quiz ____________ */
+li.option.correct-answer {
+  background-color: #d4edda;
+  position: relative;
+}
+
+li.option.option-correct {
+  background-color: #ddd;
+  position: relative;
+}
+
+li.option.wrong-answer {
+  background-color: #f8d7da;
+  position: relative;
+}
+
+li.option.completed::after {
+  color: #f1f1f1;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  ;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  margin-right: 10px;
+}
+
+li.option.completed.correct-answer::after,
+li.option.completed.option-correct::after {
+  content: 'Correct answer';
+}
+
+li.option.completed.wrong-answer::after {
+  content: 'Your answer';
+}
+
+#box-result {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#box-result h1 {
+  font-size: 36px;
+  font-weight: 500;
+  margin: 20px 0px;
+}
+
+#box-result .score {
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+#box-result .percent {
+  font-weight: bold;
+}
+
+.btn-tryagain {
+  padding: 15px 22px;
+  margin: 16px 0px 22px;
+}
+
+/* ____________ End Style for Review Quiz ____________ */
+
+/* Universal classes */
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
