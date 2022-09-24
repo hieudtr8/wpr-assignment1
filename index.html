@@ -8,7 +8,7 @@
   <title>HTML Quiz</title>
   <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
-  <link href="https://fonts.googleapis.com/css?family=Pangolin:400,700|Proxima+Nova" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Pangolin:400,700Proxima+Nova" rel="stylesheet" type="text/css">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
@@ -60,16 +60,16 @@
       <h2>Count Your Score</h2>
       <p>You will get 1 point for each correct answer. At the end of the Quiz, your total score will be displayed.
         Maximum score is 10 points.</p>
-    </section>
-    <div id="box-start" class="boxes">
-      <div id="box-start-header">
-        <h1>Start the quiz</h1>
-        <span>Good luck!</span>
+      <div id="box-start" class="boxes">
+        <div id="box-start-header">
+          <h1>Start the quiz</h1>
+          <span>Good luck!</span>
+        </div>
+        <button id="btn-start" class="btn btn-blue">
+          Start the HTML quiz ❯
+        </button>
       </div>
-      <button id="btn-start" class="btn btn-blue">
-        Start the HTML quiz ❯
-      </button>
-    </div>
+    </section>
     <section id="attempt-quiz">
       <div class="option-list">
         <h3 class="question-index">
@@ -95,7 +95,7 @@
         <ul class="option-container">
           <li class="option un-selected"> <input type="radio" name="option-2"> option1
           </li>
-          <li class="option selected"> <input checked type="radio" name="option-2"> option2
+          <li class="option option-selected"> <input checked type="radio" name="option-2"> option2
           </li>
           <li class="option un-selected"> <input type="radio" name="option-2"> option3
           </li>
@@ -103,8 +103,8 @@
           </li>
         </ul>
       </div>
-      <div class="boxes">
-        <button id="btn-submit"  class="btn btn-green">Submit your answers ❯</button>
+      <div class="boxes" id="box-submit">
+        <button id="btn-submit" class="btn btn-green">Submit your answers ❯</button>
       </div>
     </section>
 

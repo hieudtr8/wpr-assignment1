@@ -163,7 +163,7 @@ li.option {
   cursor: pointer;
 }
 
-li.option.selected,
+li.option.option-selected,
 li.option.un-selected:hover,
 li.option.completed:not(.correct-answer):not(.wrong-answer):hover {
   background-color: #ddd !important;
