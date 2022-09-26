@@ -8,9 +8,10 @@
   <title>HTML Quiz</title>
   <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
-  <link href="https://fonts.googleapis.com/css?family=Pangolin:400,700|Proxima+Nova" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Pangolin:400,700Proxima+Nova" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="text/javascript" src="script.js" defer></script>
 </head>
 
 <body>
@@ -59,16 +60,16 @@
       <h2>Count Your Score</h2>
       <p>You will get 1 point for each correct answer. At the end of the Quiz, your total score will be displayed.
         Maximum score is 10 points.</p>
-    </section>
-    <div id="box-start" class="boxes">
-      <div id="box-start-header">
-        <h1>Start the quiz</h1>
-        <span>Good luck!</span>
+      <div id="box-start" class="boxes">
+          <div id="box-start-header">
+            <h1>Start the quiz</h1>
+            <span>Good luck!</span>
+          </div>
+          <button id="btn-start" onclick="onStartQuiz()" class="btn btn-blue">
+            Start the HTML quiz ❯
+          </button>
       </div>
-      <button id="btn-start" class="btn btn-blue">
-        Start the HTML quiz ❯
-      </button>
-    </div>
+    </section>
     <section id="attempt-quiz" class="display-none">
       <div class="option-list">
         <h3 class="question-index">
@@ -101,6 +102,11 @@
           <li class="option un-selected" onclick="onSelectOption(this)"> <input type="radio" name="option-2"> option4
           </li>
         </ul>
+      </div>
+      <div class="boxes">
+        <button id="btn-submit" onclick="onSubmitAnswer()" class="btn btn-green">
+          Submit your answers ❯
+        </button>
       </div>
     </section>
 
@@ -142,7 +148,7 @@
         <div class="score">1/10</div>
         <div class="percent">10%</div>
         <p class="quote">Practice more to improve it :D</p>
-        <button class="btn btn-blue btn-tryagain">Try again</button>
+        <button onclick="onTryAgain()" class="btn btn-blue btn-tryagain">Try again</button>
       </div>
     </section>
   </article>
