@@ -24,7 +24,7 @@ function onSelectOption(e) {
   }
 }
 let listOption = attempQuizSection.querySelectorAll('.option');
-for(option of listOption){
+for (option of listOption) {
   option.addEventListener('click', onSelectOption);
 }
 
@@ -57,11 +57,9 @@ const btnStart = document.querySelector('#btn-start');
 btnStart.addEventListener('click', onStartQuiz);
 
 function onSubmitAnswer() {
-  if (confirm('Are you sure want to finish this quiz?')) {
-    displaySection(attempQuizSection, false);
-    displaySection(reviewQuizSection, true);
-    window.scrollTo(0, 0);
-  }
+  displaySection(attempQuizSection, false);
+  displaySection(reviewQuizSection, true);
+  window.scrollTo(0, 0);
 }
 const btnSubmit = document.querySelector('#btn-submit');
 btnSubmit.addEventListener('click', onSubmitAnswer);
