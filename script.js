@@ -1,5 +1,10 @@
 // TODO(you): Write the JavaScript necessary to complete the assignment.
-const onSelectOption = (selectedOption) => {
+let introductionSection = document.querySelector('#introduction');
+let attempQuizSection = document.querySelector('#attempt-quiz');
+let reviewQuizSection = document.querySelector('#review-quiz');
+
+function onSelectOption(e) {
+  const selectedOption = e.currentTarget;
   const targetedQuestion = selectedOption.parentElement.parentElement;
   const listTargetedOption = targetedQuestion.childNodes[5].childNodes;
   for (option of listTargetedOption) {
@@ -17,9 +22,13 @@ const onSelectOption = (selectedOption) => {
       option.classList.add('un-selected');
     }
   }
-};
+}
+let listOption = attempQuizSection.querySelectorAll('.option');
+for(option of listOption){
+  option.addEventListener('click', onSelectOption);
+}
 
-const displaySection = (section, display) => {
+function displaySection(section, display) {
   const displayNone = 'display-none';
   const displayBlock = 'display-block';
   if (!display) {
@@ -37,28 +46,30 @@ const displaySection = (section, display) => {
       section.classList.add(displayBlock);
     }
   }
-};
+}
 
-let introductionSection = document.getElementById('introduction');
-let attempQuizSection = document.getElementById('attempt-quiz');
-let reviewQuizSection = document.getElementById('review-quiz');
-
-const onStartQuiz = () => {
+function onStartQuiz() {
   displaySection(introductionSection, false);
   displaySection(attempQuizSection, true);
   window.scrollTo(0, 0);
-};
+}
+const btnStart = document.querySelector('#btn-start');
+btnStart.addEventListener('click', onStartQuiz);
 
-const onSubmitAnswer = () => {
+function onSubmitAnswer() {
   if (confirm('Are you sure want to finish this quiz?')) {
     displaySection(attempQuizSection, false);
     displaySection(reviewQuizSection, true);
     window.scrollTo(0, 0);
   }
-};
+}
+const btnSubmit = document.querySelector('#btn-submit');
+btnSubmit.addEventListener('click', onSubmitAnswer);
 
-const onTryAgain = () => {
+function onTryAgain() {
   displaySection(reviewQuizSection, false);
   displaySection(introductionSection, true);
   window.scrollTo(0, 0);
-};
+}
+const btnTryAgain = document.querySelector('#btn-try-again');
+btnTryAgain.addEventListener('click', onTryAgain);

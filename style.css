@@ -179,7 +179,7 @@ li.option {
 }
 
 li.option.option-selected,
-li.option.un-selected:hover,
+li.option:hover,
 li.option.completed:not(.correct-answer):not(.wrong-answer):hover {
   background-color: #ddd !important;
 }
