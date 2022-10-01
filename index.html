@@ -70,86 +70,10 @@
           </button>
       </div>
     </section>
-    <section id="attempt-quiz" class="display-none">
-      <div class="option-list">
-        <h3 class="question-index">
-          Question 1 of 10
-        </h3>
-        <span class="question-text">question 5</span>
-        <ul class="option-container">
-          <li class="option un-selected" onclick="onSelectOption(this)"> <input type="radio" name="option-1"> option1
-          </li>
-          <li class="option un-selected" onclick="onSelectOption(this)"> <input type="radio" name="option-1"> option2
-          </li>
-          <li class="option un-selected" onclick="onSelectOption(this)"> <input type="radio" name="option-1"> option3
-          </li>
-          <li class="option un-selected" onclick="onSelectOption(this)"> <input type="radio" name="option-1"> option4
-          </li>
-        </ul>
-      </div>
-      <div class="option-list">
-        <h3 class="question-index">
-          Question 2 of 10
-        </h3>
-        <span class="question-text">question 6</span>
-        <ul class="option-container">
-          <li class="option un-selected" onclick="onSelectOption(this)"> <input type="radio" name="option-2"> option1
-          </li>
-          <li class="option un-selected" onclick="onSelectOption(this)"> <input type="radio" name="option-2"> option2
-          </li>
-          <li class="option un-selected" onclick="onSelectOption(this)"> <input type="radio" name="option-2"> option3
-          </li>
-          <li class="option un-selected" onclick="onSelectOption(this)"> <input type="radio" name="option-2"> option4
-          </li>
-        </ul>
-      </div>
-      <div class="boxes">
-        <button id="btn-submit" onclick="onSubmitAnswer()" class="btn btn-green">
-          Submit your answers ❯
-        </button>
-      </div>
+    <section id="attempt-quiz">
     </section>
 
     <section id="review-quiz" class="display-none">
-      <div class="option-list">
-        <h3 class="question-index">
-          Question 1 of 10
-        </h3>
-        <span class="question-text">question 5</span>
-        <ul class="option-container">
-          <li class="option completed correct-answer"> <input disabled type="radio" name="option-1" checked> option1
-          </li>
-          <li class="option completed"> <input disabled type="radio" name="option-1"> option2
-          </li>
-          <li class="option completed"> <input disabled type="radio" name="option-1"> option3
-          </li>
-          <li class="option completed"> <input disabled type="radio" name="option-1"> option4
-          </li>
-        </ul>
-      </div>
-      <div class="option-list">
-        <h3 class="question-index">
-          Question 2 of 10
-        </h3>
-        <span class="question-text">question 6</span>
-        <ul class="option-container">
-          <li class="option completed option-correct"> <input disabled type="radio" name="option-1"> option1
-          </li>
-          <li class="option completed wrong-answer"> <input disabled checked type="radio" name="option-1"> option2
-          </li>
-          <li class="option completed"> <input disabled type="radio" name="option-1"> option3
-          </li>
-          <li class="option completed"> <input disabled type="radio" name="option-1"> option4
-          </li>
-        </ul>
-      </div>
-      <div class="boxes" id="box-result">
-        <h1>Result:</h1>
-        <div class="score">1/10</div>
-        <div class="percent">10%</div>
-        <p class="quote">Practice more to improve it :D</p>
-        <button onclick="onTryAgain()" class="btn btn-blue btn-tryagain">Try again</button>
-      </div>
     </section>
   </article>
 </body>
