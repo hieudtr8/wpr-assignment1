@@ -1,7 +1,7 @@
 // TODO(you): Write the JavaScript necessary to complete the assignment.
-let introductionSection = document.getElementById('introduction');
-let attempQuizSection = document.getElementById('attempt-quiz');
-let reviewQuizSection = document.getElementById('review-quiz');
+let introductionSection = document.querySelector('#introduction');
+let attempQuizSection = document.querySelector('#attempt-quiz');
+let reviewQuizSection = document.querySelector('#review-quiz');
 let listQuestion = [];
 let attempId = '';
 let quizStarted = false;
@@ -76,6 +76,8 @@ const onStartQuiz = () => {
       });
   }
 };
+const btnStartQuiz = document.querySelector('#btn-start');
+btnStartQuiz.addEventListener('click', onStartQuiz);
 
 const populateListQuestions = (data, typeListQuestion) => {
   let index = 1;
@@ -83,7 +85,7 @@ const populateListQuestions = (data, typeListQuestion) => {
   listQuestion = data.questions;
   const listUserSelectedAnswers = data.answers;
   const listCorrectAnswer = data.correctAnswers;
-  const {score , scoreText } = data;
+  const { score, scoreText } = data;
   for (let question of data.questions) {
     // Add question index and question text
     const questionContainer = document.createElement('div');
