@@ -8,10 +8,19 @@ let quizStarted = false;
 
 const onSelectOption = (e) => {
   const selectedOption = e.target;
-  const targetedQuestion = selectedOption.parentElement.parentElement;
-  const listTargetedOption = targetedQuestion.childNodes[2].childNodes;
+  let targetedQuestion;
+  let listTargetedOption;
+
+  if (selectedOption.tagName === 'LI') {
+    targetedQuestion = selectedOption.parentElement;
+  } else {
+    targetedQuestion = selectedOption.parentElement.parentElement;
+  }
+
+  listTargetedOption = targetedQuestion.childNodes;
+
   for (option of listTargetedOption) {
-    if (option == selectedOption) {
+    if (option == selectedOption || option == selectedOption.parentElement ) {
       if (option.classList.contains('un-selected')) {
         option.classList.remove('un-selected');
         option.classList.add('option-selected');
@@ -83,7 +92,7 @@ const populateListQuestions = (data, typeListQuestion) => {
   let index = 1;
   attempId = data._id;
   listQuestion = data.questions;
-  const listUserSelectedAnswers = data.answers;
+  const listUserSelectedAnswers = data.userAnswers;
   const listCorrectAnswer = data.correctAnswers;
   const { score, scoreText } = data;
   for (let question of data.questions) {
@@ -209,7 +218,7 @@ const onSubmitAnswer = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ answers: listAnswers }),
+      body: JSON.stringify({ userAnswers: listAnswers }),
     };
     fetch(
       `https://wpr-quiz-api.herokuapp.com/attempts/${attempId}/submit`,
